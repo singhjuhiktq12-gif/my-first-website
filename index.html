@@ -1,168 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Happy Birthday Sushmita</title>
+<!-- PAGE 4 -->
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-min-height:100vh;
-background:linear-gradient(#a8ddff,#eaf8ff,#ffffff);
-}
-
-.page{
-height:100vh;
-display:none;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:25px;
-}
-
-.active{
-display:flex;
-}
-
-.card{
-background:rgba(255,255,255,0.45);
-backdrop-filter:blur(12px);
-padding:35px 25px;
-border-radius:25px;
-max-width:500px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-h1{
-color:#4aa9d8;
-font-size:38px;
-}
-
-h2{
-color:#4aa9d8;
-margin:15px;
-}
-
-p{
-color:#555;
-font-size:17px;
-line-height:1.6;
-margin:15px;
-}
-
-button{
-background:#70c8f5;
-color:white;
-border:none;
-padding:12px 25px;
-border-radius:25px;
-font-size:17px;
-margin-top:20px;
-}
-
-
-/* Cake */
-
-.cake{
-font-size:90px;
-animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-50%{
-transform:translateY(-15px);
-}
-}
-
-
-/* Stars */
-
-.star{
-position:absolute;
-font-size:25px;
-animation:shine 2s infinite;
-}
-
-@keyframes shine{
-50%{
-opacity:.3;
-}
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<div class="star" style="top:10%;left:15%">✨</div>
-<div class="star" style="top:20%;right:15%">✨</div>
-
-
-
-<!-- PAGE 1 -->
-
-<div class="page active" id="page1">
-
-<div class="card">
-
-<h1>
-🎉 Happy Birthday Sushmita 💙
-</h1>
-
-<p>
-A little surprise for you ✨
-</p>
-
-<button onclick="showPage(2)">
-Open Your Surprise 💌
-</button>
-
-</div>
-
-</div>
-
-
-
-
-<!-- PAGE 2 -->
-
-<div class="page" id="page2">
+<div class="page" id="page4">
 
 <div class="card">
 
 <h2>
-Dear Summi 💙
+Our Little Moments 💙
 </h2>
 
 <p>
-Today is a special day because it celebrates someone who brings so much happiness into my life ✨
+Two hearts, one beautiful friendship ✨
 </p>
+
+<div style="font-size:90px;">
+👭🌸
+</div>
 
 <p>
-Thank you for all the beautiful memories, endless laughs, and little moments that make our friendship special ☁️💙
+From sharing smiles to creating memories,
+every moment is special ☁️💙
 </p>
 
-<p>
-I hope your life is always filled with happiness, love and success 🌸
-</p>
-
-<p>
-<b>Happy Birthday, Summi 🎂💙</b>
-</p>
-
-<p>
-With lots of love,<br>
-<b>Juhi 🌷</b>
-</p>
-
-<button onclick="showPage(3)">
+<button onclick="showPage(5)">
 Next ✨
 </button>
 
@@ -171,54 +30,24 @@ Next ✨
 </div>
 
 
+<!-- PAGE 5 -->
 
-
-<!-- PAGE 3 -->
-
-<div class="page" id="page3">
+<div class="page" id="page5">
 
 <div class="card">
 
-<h1>
-🎂
-</h1>
-
-<div class="cake">
-🎂
-</div>
-
 <h2>
-Make a wish, Summi ✨
+Forever Friends 🐼💙
 </h2>
 
+<div style="font-size:90px;">
+🐼🐼
+</div>
+
 <p>
-May your day be filled with smiles, happiness and beautiful moments 💙
+Some bonds are forever and some friendships are magical ✨
 </p>
 
-<button>
-Next 🌸
-</button>
-
 </div>
 
 </div>
-
-
-
-<script>
-
-function showPage(pageNumber){
-
-document.querySelectorAll(".page").forEach(function(page){
-page.classList.remove("active");
-});
-
-document.getElementById("page"+pageNumber).classList.add("active");
-
-}
-
-</script>
-
-
-</body>
-</html>
