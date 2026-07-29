@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Happy Birthday Sushmita</title>
 
 <style>
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-  min-height:100vh;
-  background:linear-gradient(#a8ddff,#eaf8ff);
+min-height:100vh;
+background:linear-gradient(#a8ddff,#eaf8ff,#ffffff);
 }
 
-
-/* pages */
-
 .page{
-  min-height:100vh;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:30px;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:25px;
 }
 
 .active{
-  display:flex;
+display:flex;
 }
-
-
-/* card */
 
 .card{
-  background:rgba(255,255,255,0.45);
-  backdrop-filter:blur(12px);
-  padding:40px 25px;
-  border-radius:25px;
-  max-width:500px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+background:rgba(255,255,255,0.45);
+backdrop-filter:blur(12px);
+padding:35px 25px;
+border-radius:25px;
+max-width:500px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-
 h1{
-  color:#4aa9d8;
-  font-size:40px;
+color:#4aa9d8;
+font-size:38px;
 }
 
 h2{
-  color:#4aa9d8;
-  margin-bottom:20px;
+color:#4aa9d8;
+margin:15px;
 }
 
 p{
-  color:#555;
-  font-size:18px;
-  line-height:1.6;
-  margin:15px 0;
+color:#555;
+font-size:17px;
+line-height:1.6;
+margin:15px;
 }
-
 
 button{
-  margin-top:25px;
-  padding:12px 25px;
-  border:none;
-  border-radius:25px;
-  background:#70c8f5;
-  color:white;
-  font-size:18px;
+background:#70c8f5;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+font-size:17px;
+margin-top:20px;
 }
 
 
-/* stars */
+/* Cake */
+
+.cake{
+font-size:90px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{
+transform:translateY(-15px);
+}
+}
+
+
+/* Stars */
 
 .star{
- position:absolute;
- font-size:25px;
- animation:blink 2s infinite;
+position:absolute;
+font-size:25px;
+animation:shine 2s infinite;
 }
 
-@keyframes blink{
- 50%{
- opacity:.3;
- }
+@keyframes shine{
+50%{
+opacity:.3;
+}
 }
 
 </style>
-
 </head>
 
 
@@ -99,7 +102,8 @@ button{
 
 
 <div class="star" style="top:10%;left:15%">✨</div>
-<div class="star" style="top:20%;right:20%">✨</div>
+<div class="star" style="top:20%;right:15%">✨</div>
+
 
 
 <!-- PAGE 1 -->
@@ -116,14 +120,14 @@ button{
 A little surprise for you ✨
 </p>
 
-
-<button onclick="nextPage()">
+<button onclick="showPage(2)">
 Open Your Surprise 💌
 </button>
 
 </div>
 
 </div>
+
 
 
 
@@ -137,37 +141,63 @@ Open Your Surprise 💌
 Dear Summi 💙
 </h2>
 
-
 <p>
 Today is a special day because it celebrates someone who brings so much happiness into my life ✨
 </p>
-
 
 <p>
 Thank you for all the beautiful memories, endless laughs, and little moments that make our friendship special ☁️💙
 </p>
 
-
 <p>
 I hope your life is always filled with happiness, love and success 🌸
 </p>
 
-
 <p>
 <b>Happy Birthday, Summi 🎂💙</b>
 </p>
-
 
 <p>
 With lots of love,<br>
 <b>Juhi 🌷</b>
 </p>
 
-
-<button onclick="firstPage()">
-Back 💙
+<button onclick="showPage(3)">
+Next ✨
 </button>
 
+</div>
+
+</div>
+
+
+
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<div class="card">
+
+<h1>
+🎂
+</h1>
+
+<div class="cake">
+🎂
+</div>
+
+<h2>
+Make a wish, Summi ✨
+</h2>
+
+<p>
+May your day be filled with smiles, happiness and beautiful moments 💙
+</p>
+
+<button>
+Next 🌸
+</button>
 
 </div>
 
@@ -177,15 +207,14 @@ Back 💙
 
 <script>
 
-function nextPage(){
- document.getElementById("page1").classList.remove("active");
- document.getElementById("page2").classList.add("active");
-}
+function showPage(pageNumber){
 
+document.querySelectorAll(".page").forEach(function(page){
+page.classList.remove("active");
+});
 
-function firstPage(){
- document.getElementById("page2").classList.remove("active");
- document.getElementById("page1").classList.add("active");
+document.getElementById("page"+pageNumber).classList.add("active");
+
 }
 
 </script>
