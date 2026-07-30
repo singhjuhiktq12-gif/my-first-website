@@ -1,52 +1,354 @@
-<!-- =========================
-     PAGE 5 : A Song, Just for You 🎵
-========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summi's Birthday 💙</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<section class="page" id="page5">
+<body>
 
-    <div class="page-content music-page">
+<div class="book">
 
-        <div class="music-icon">
-            🎵
-        </div>
+    <!-- =========================
+         PAGE 1 : SURPRISE COVER 🎁
+    ========================== -->
+    <section class="page active" id="page1">
+        <div class="page-content">
 
-        <h1>
-            A Song, Just for You 💙
-        </h1>
+            <div class="gift-box">🎁</div>
 
-        <p class="dedication">
-            Dedicated with love,<br>
-            — Juhi 💙
-        </p>
+            <h1>To someone who means the world to me... 💙</h1>
 
+            <p>I made something just for you. ✨</p>
 
-        <div class="music-player">
-
-            <div class="song-cover">
-                🎧
-            </div>
-
-            <h2>
-                Arz Kiya Hai
-            </h2>
-
-            <p>
-                Anuv Jain
-            </p>
-
-
-            <button id="playSong">
-                ▶ Play
+            <button onclick="nextPage()">
+                ✨ Open It
             </button>
 
         </div>
+    </section>
 
 
-        <button onclick="nextPage()">
-            Continue Our Story ➜
-        </button>
+    <!-- =========================
+         PAGE 2 : COLLECTING MEMORIES ☁️
+    ========================== -->
+    <section class="page" id="page2">
+        <div class="page-content">
+
+            <div class="clouds">☁️ ✨ ☁️</div>
+
+            <h1>Collecting all our memories... 💙</h1>
+
+            <div class="loader">
+                <div class="loading-progress"></div>
+            </div>
+
+            <p>Just a little moment... 🌷</p>
+
+        </div>
+    </section>
 
 
-    </div>
+    <!-- =========================
+         PAGE 3 : BIRTHDAY REVEAL 🎉
+    ========================== -->
+    <section class="page" id="page3">
+        <div class="page-content celebration">
 
-</section>
+            <div class="balloons">
+                <span>🎈</span>
+                <span>🎈</span>
+                <span>🎈</span>
+            </div>
+
+            <div class="confetti">
+                🎊 ✨ 🎊 ✨ 🎊
+            </div>
+
+            <div class="cake">🎂</div>
+
+            <h1>Happy Birthday, My Girll 💗🌷🧿</h1>
+
+            <p>
+                Today is all about you, Summi. May your heart always be
+                as beautiful as your smile. ☁️💗
+            </p>
+
+            <button onclick="nextPage()">Next ➜</button>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         PAGE 4 : THINGS I NEVER SAY ENOUGH 💬
+    ========================== -->
+    <section class="page" id="page4">
+        <div class="page-content chat-page">
+
+            <h1>A Few Things I Never Say Enough... 💙</h1>
+
+            <div class="chat-container">
+
+                <div class="chat-message left">
+                    You're my safest person.
+                </div>
+
+                <div class="chat-message right">
+                    You always make me laugh.
+                </div>
+
+                <div class="chat-message left">
+                    You believe in me.
+                </div>
+
+                <div class="chat-message right">
+                    You're one of the best things that ever happened to me.
+                </div>
+
+                <div class="chat-message left">
+                    Life is simply better with you in it.
+                </div>
+
+            </div>
+
+            <button onclick="nextPage()">
+                Continue Our Story ➜
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         PAGE 5 : A SONG JUST FOR YOU 🎵
+    ========================== -->
+    <section class="page" id="page5">
+        <div class="page-content music-page">
+
+            <div class="music-icon">🎵</div>
+
+            <h1>A Song, Just for You 💙</h1>
+
+            <p class="dedication">
+                Dedicated with love,<br>
+                — Juhi 💙
+            </p>
+
+            <div class="music-player">
+
+                <div class="song-cover">🎧</div>
+
+                <h2>Arz Kiya Hai</h2>
+                <p>Anuv Jain</p>
+
+                <button id="playSong">
+                    ▶ Play
+                </button>
+
+            </div>
+
+            <button onclick="nextPage()">
+                Continue Our Story ➜
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         PAGE 6 : OUR LITTLE WORLD 🌸
+    ========================== -->
+    <section class="page" id="page6">
+        <div class="page-content memory-page">
+
+            <h1>Our Little World 💙</h1>
+
+            <p class="subtitle">
+                Every memory has a little story, and every story has you in it.
+            </p>
+
+            <div class="memory-gallery">
+
+                <div class="memory-card">
+                    <div class="memory-image placeholder">
+                        👭
+                    </div>
+                    <p>
+                        Some people walk into your life and quietly become
+                        your favourite person. 💙
+                    </p>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image placeholder">
+                        🐼🌷
+                    </div>
+                    <p>
+                        A tiny flower, a million unspoken feelings. 🌷
+                    </p>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image placeholder">
+                        👭💗
+                    </div>
+                    <p>
+                        Some hugs say everything words never could.
+                    </p>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image placeholder">
+                        🐼🐼
+                    </div>
+                    <p>
+                        No matter what happens, I'll always be on your side.
+                    </p>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image placeholder">
+                        🏔️👭
+                    </div>
+                    <p>
+                        The view is beautiful... but it is even better
+                        because you're here.
+                    </p>
+                </div>
+
+                <div class="memory-card">
+                    <div class="memory-image placeholder">
+                        🌸👭
+                    </div>
+                    <p>
+                        I hope we always find our way back to each other.
+                    </p>
+                </div>
+
+            </div>
+
+            <button onclick="nextPage()">
+                Continue Our Story ➜
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         PAGE 7 : LETTER FROM MY HEART 💌
+    ========================== -->
+    <section class="page" id="page7">
+        <div class="page-content letter-page">
+
+            <div class="envelope">💌</div>
+
+            <h1>A Letter From My Heart</h1>
+
+            <div class="letter-box">
+
+                <p>
+                    You know tum meri life ka sabse best part ho,
+                    jise kabhi bhulaya nahi ja sakta.
+                </p>
+
+                <p>
+                    Tumhare sath school mein bite pal, hamari phone calls
+                    par ki baatein, hamari ladai, hamari jealousy,
+                    tumhara mere liye possessive hona, caring hona,
+                    mera dhyan rakhna — that's truly sukoon.
+                </p>
+
+                <p>
+                    You have become such an important part of my life
+                    that even the smallest memories with you mean so much
+                    to me.
+                </p>
+
+                <p>
+                    Thank you for being there, for understanding me,
+                    for making me laugh and simply for being you.
+                </p>
+
+                <p>
+                    I hope no matter how much life changes,
+                    some things between us always stay the same. 💙
+                </p>
+
+                <p>
+                    Always remember that you are deeply loved,
+                    genuinely valued and incredibly special to me.
+                </p>
+
+                <p class="signature">
+                    — Juhi 💙
+                </p>
+
+            </div>
+
+            <button onclick="nextPage()">
+                ✨ One Last Surprise...
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         PAGE 8 : THE GRAND FINALE 🎂
+    ========================== -->
+    <section class="page final-page" id="page8">
+
+        <div class="final-background">
+
+            <div class="final-balloons">
+                🎈 🎈 🎈 🎈 🎈
+            </div>
+
+            <div class="floating-hearts">
+                💗 💙 💕 ✨ 💗
+            </div>
+
+            <div class="final-content">
+
+                <p class="final-line line1">
+                    Every memory we made...
+                </p>
+
+                <p class="final-line line2">
+                    Every laugh we shared...
+                </p>
+
+                <p class="final-line line3">
+                    Every little moment...
+                </p>
+
+                <h1 class="final-message">
+                    Thank you for being YOU. 💙
+                </h1>
+
+                <p class="favourite-chapter">
+                    No matter where life takes us,
+                    you'll always be my favourite chapter. 🌷
+                </p>
+
+                <div class="forever">
+                    Forever &amp; Always,<br>
+                    <strong>— Juhi 💙</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
