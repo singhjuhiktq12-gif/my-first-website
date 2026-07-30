@@ -1,1 +1,864 @@
+/* =========================
+   BIRTHDAY STORY BOOK
+   STYLE.CSS
+========================= */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    overflow: hidden;
+    background: #dff4ff;
+    color: #24445a;
+}
+
+
+/* =========================
+   DREAMY BACKGROUND
+========================= */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: -2;
+}
+
+body::before {
+    width: 280px;
+    height: 280px;
+    background: #ffffff;
+    top: -80px;
+    left: -80px;
+}
+
+body::after {
+    width: 320px;
+    height: 320px;
+    background: #b9e6ff;
+    right: -100px;
+    bottom: -100px;
+}
+
+
+/* =========================
+   BOOK
+========================= */
+
+.book {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================
+   EVERY PAGE
+========================= */
+
+.page {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(100%) scale(0.97);
+
+    transition:
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.55s ease,
+        visibility 0.55s ease;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Current page */
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    z-index: 5;
+}
+
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.page-content {
+    width: min(92vw, 650px);
+    max-height: 92vh;
+
+    padding: 42px 28px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.52);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(70, 130, 160, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    animation: contentAppear 0.9s ease;
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    line-height: 1.2;
+    color: #254b63;
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: #315a72;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    line-height: 1.7;
+    color: #496a7d;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    outline: none;
+
+    margin-top: 28px;
+    padding: 14px 25px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.75);
+    color: #315b73;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(73, 125, 150, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 30px rgba(73, 125, 150, 0.25);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   PAGE 1
+   GIFT
+========================= */
+
+.gift-box {
+    font-size: 6rem;
+    margin-bottom: 20px;
+
+    animation: giftFloat 2.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   PAGE 2
+   CLOUDS
+========================= */
+
+.clouds {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    animation: cloudFloat 3s ease-in-out infinite;
+}
+
+
+/* Loading bar */
+
+.loader {
+    width: 100%;
+    max-width: 420px;
+    margin: 28px auto 0;
+}
+
+.loading-progress {
+    width: 0;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #a9dcf5,
+        #d6efff,
+        #b8e4f7
+    );
+
+    animation: loading 4s ease-in-out forwards;
+}
+
+.loader::before {
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 12px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.65);
+    overflow: hidden;
+}
+
+
+/* =========================
+   PAGE 3
+========================= */
+
+.celebration {
+    position: relative;
+    overflow: hidden;
+}
+
+.balloons {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+
+    animation: balloonsFloat 3s ease-in-out infinite;
+}
+
+.balloons span {
+    display: inline-block;
+}
+
+.confetti {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+
+    animation: confettiMove 2s ease-in-out infinite;
+}
+
+.cake {
+    font-size: 5rem;
+    margin: 10px 0 20px;
+
+    animation: cakePop 1.2s ease;
+}
+
+
+/* =========================
+   PAGE 4
+   CHAT
+========================= */
+
+.chat-page h1 {
+    margin-bottom: 28px;
+}
+
+.chat-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    max-height: 55vh;
+    overflow-y: auto;
+
+    padding: 5px;
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: rgba(100, 160, 185, 0.35);
+    border-radius: 20px;
+}
+
+.chat-message {
+    max-width: 82%;
+
+    padding: 13px 17px;
+
+    border-radius: 20px;
+
+    font-size: 0.98rem;
+    line-height: 1.45;
+
+    box-shadow: 0 5px 18px rgba(70, 120, 145, 0.12);
+
+    animation: messageAppear 0.6s ease both;
+}
+
+.chat-message.left {
+    align-self: flex-start;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border-bottom-left-radius: 5px;
+}
+
+.chat-message.right {
+    align-self: flex-end;
+
+    background: rgba(190, 231, 248, 0.78);
+
+    border-bottom-right-radius: 5px;
+}
+
+
+/* =========================
+   PAGE 5
+   MUSIC
+========================= */
+
+.music-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+
+    animation: musicFloat 2s ease-in-out infinite;
+}
+
+.dedication {
+    margin-bottom: 25px;
+}
+
+.music-player {
+    width: min(100%, 390px);
+
+    margin: auto;
+    padding: 25px 20px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px rgba(65, 120, 145, 0.14);
+}
+
+.song-cover {
+    width: 105px;
+    height: 105px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 22px;
+
+    background: rgba(218, 241, 252, 0.8);
+
+    font-size: 3rem;
+
+    box-shadow: 0 8px 20px rgba(70, 130, 160, 0.12);
+}
+
+
+/* =========================
+   PAGE 6
+   MEMORY GALLERY
+========================= */
+
+.memory-page {
+    max-height: 94vh;
+    overflow-y: auto;
+}
+
+.memory-page::-webkit-scrollbar {
+    width: 4px;
+}
+
+.memory-page::-webkit-scrollbar-thumb {
+    background: rgba(100, 160, 185, 0.3);
+    border-radius: 20px;
+}
+
+.subtitle {
+    margin-bottom: 25px;
+}
+
+.memory-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    text-align: left;
+}
+
+.memory-card {
+    background: rgba(255, 255, 255, 0.68);
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(70, 125, 150, 0.1);
+
+    transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-4px);
+}
+
+.memory-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3rem;
+
+    background: linear-gradient(
+        145deg,
+        #e9f8ff,
+        #d2effb
+    );
+}
+
+.memory-card p {
+    padding: 12px;
+
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+
+/* =========================
+   PAGE 7
+   LETTER
+========================= */
+
+.letter-page {
+    max-height: 94vh;
+    overflow-y: auto;
+}
+
+.envelope {
+    font-size: 5rem;
+    margin-bottom: 10px;
+
+    animation: envelopeFloat 2.5s ease-in-out infinite;
+}
+
+.letter-box {
+    text-align: left;
+
+    max-height: 48vh;
+    overflow-y: auto;
+
+    padding: 22px;
+
+    background: rgba(255, 255, 255, 0.62);
+
+    border-radius: 20px;
+
+    box-shadow:
+        inset 0 0 25px rgba(110, 165, 190, 0.07);
+}
+
+.letter-box::-webkit-scrollbar {
+    width: 4px;
+}
+
+.letter-box::-webkit-scrollbar-thumb {
+    background: rgba(100, 160, 185, 0.3);
+    border-radius: 20px;
+}
+
+.letter-box p {
+    margin-bottom: 17px;
+    font-size: 1rem;
+}
+
+.signature {
+    text-align: right;
+    font-weight: bold;
+}
+
+
+/* =========================
+   PAGE 8
+   FINAL
+========================= */
+
+.final-page {
+    background: transparent;
+}
+
+.final-background {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.final-content {
+    width: min(90vw, 650px);
+
+    padding: 35px 25px;
+
+    position: relative;
+    z-index: 3;
+}
+
+.final-line {
+    opacity: 0;
+    animation: finalText 1.5s ease forwards;
+}
+
+.line1 {
+    animation-delay: 0.5s;
+}
+
+.line2 {
+    animation-delay: 2s;
+}
+
+.line3 {
+    animation-delay: 3.5s;
+}
+
+.final-message {
+    opacity: 0;
+
+    margin-top: 25px;
+
+    animation: finalText 1.5s ease forwards;
+    animation-delay: 5s;
+}
+
+.favourite-chapter {
+    opacity: 0;
+
+    margin-top: 20px;
+
+    animation: finalText 1.5s ease forwards;
+    animation-delay: 6.5s;
+}
+
+.forever {
+    opacity: 0;
+
+    margin-top: 28px;
+
+    font-size: 1.1rem;
+    line-height: 1.7;
+
+    animation: finalText 1.5s ease forwards;
+    animation-delay: 8s;
+}
+
+.final-balloons {
+    position: absolute;
+    top: 7%;
+    left: 0;
+    width: 100%;
+
+    font-size: clamp(2rem, 9vw, 4.5rem);
+    letter-spacing: 7px;
+
+    animation: finalBalloons 4s ease-in-out infinite;
+}
+
+.floating-hearts {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+
+    font-size: 2rem;
+    letter-spacing: 15px;
+
+    animation: heartsFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes contentAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+@keyframes cloudFloat {
+    0%, 100% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+
+    25% {
+        width: 25%;
+    }
+
+    50% {
+        width: 52%;
+    }
+
+    75% {
+        width: 78%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes balloonsFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes confettiMove {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(8px) rotate(4deg);
+    }
+}
+
+@keyframes cakePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    70% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes musicFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes envelopeFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+@keyframes finalText {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finalBalloons {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes heartsFloat {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translateY(-12px);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 15px;
+    }
+
+    .page-content {
+        width: 94vw;
+        padding: 32px 20px;
+        border-radius: 24px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.98rem;
+    }
+
+    .gift-box {
+        font-size: 5rem;
+    }
+
+    .memory-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card p {
+        font-size: 0.9rem;
+    }
+
+    .chat-message {
+        max-width: 88%;
+        font-size: 0.9rem;
+    }
+
+    .letter-box {
+        padding: 17px;
+    }
+
+    .letter-box p {
+        font-size: 0.92rem;
+    }
+
+    .final-content {
+        padding: 25px 15px;
+    }
+
+    .final-message {
+        font-size: 2rem;
+    }
+
+    .final-balloons {
+        top: 4%;
+    }
+}
